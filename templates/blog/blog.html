@@ -8,10 +8,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-title-heading">
-                        <h1 class="h1-title">BLOG SIDEBAR</h1>
+                        <h1 class="h1-title">BLOG</h1>
                     </div>
                     <ul class="breadcrumbs">
-                        <li><a href="#" title="">Home</a></li>
+                        <li><a href="{% url 'website:index' %}" title="">Home</a></li>
                         <li class="dot">/</li>
                         <li>Blog</li>
                     </ul>
@@ -188,97 +188,35 @@
             </div>
             <div class="col-lg-9 col-md-8">
                 <div class="post-wrap">
+                    {% for post in posts %}
                     <article class="main-post">
                         <div class="featured-post">
-                            <a href="#" title="">
+                            <a href="{% url 'blog:single' pid=post.id %}" title="">
                                 <img src="{% static 'images/blog/post-01.jpg' %}" alt="" />
                             </a>
                         </div>
                         <div class="entry-content">
                             <h2>
-                                <a href="#" title="">ICOs Raise Over $1 Billion in a Month for the First
-                                    Time</a>
+                                <a href="{% url 'blog:single' pid=post.id %}" title="">{{post.title}}</a>
                             </h2>
                             <p>
-                                Integer luctus diam ac scerisque consectetur. Vimus euismod nec lacus sit amet.
-                                Aenean interdus mida vitami bland. Quisque dignissim com doc blandit. Praesent
-                                urna nisi, aliquam malesuada et, lacinia in nibh. Curabit vel tellus tristique,
-                                vestibulum lectus sed, pharetra orci. Proin dictum nibh velit, eu semper libero
-                                varius at...
+                                {{post.content}}
                             </p>
+                            <a href="#" class="read-more" title="">READ MORE</a>
                         </div>
                         <ul class="meta-left">
                             <li class="post-date">
-                                <i class="fa fa-calendar"></i> 12 Feb 2018
+                                <i class="fa fa-calendar"></i> {{post.published_date}}
                             </li>
                             <li class="post-view">
-                                <i class="fa fa-eye"></i> 55
+                                <i class="fa fa-eye"></i> {{post.counted_views}}
                             </li>
                             <li class="post-comment">
                                 <i class="fa fa-comment"></i> 12
                             </li>
                         </ul>
                     </article>
-                    <article class="main-post">
-                        <div class="featured-post">
-                            <a href="#" title="">
-                                <img src="{% static 'images/blog/post-02.jpg' %}" alt="" />
-                            </a>
-                        </div>
-                        <div class="entry-content">
-                            <h2>
-                                <a href="#" title="">Stripe is Withdrawing Support for Bitcoin</a>
-                            </h2>
-                            <p>
-                                Integer luctus diam ac scerisque consectetur. Vimus euismod nec lacus sit amet.
-                                Aenean interdus mida vitami bland. Quisque dignissim com doc blandit. Praesent
-                                urna nisi, aliquam malesuada et, lacinia in nibh. Curabit vel tellus tristique,
-                                vestibulum lectus sed, pharetra orci. Proin dictum nibh velit, eu semper libero
-                                varius at...
-                            </p>
-                        </div>
-                        <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> 12 Feb 2018
-                            </li>
-                            <li class="post-view">
-                                <i class="fa fa-eye"></i> 55
-                            </li>
-                            <li class="post-comment">
-                                <i class="fa fa-comment"></i> 12
-                            </li>
-                        </ul>
-                    </article>
-                    <article class="main-post">
-                        <div class="featured-post">
-                            <a href="#" title="">
-                                <img src="{% static 'images/blog/post-03.jpg' %}" alt="" />
-                            </a>
-                        </div>
-                        <div class="entry-content">
-                            <h2>
-                                <a href="#" title="">Japan's GMO Internet Develops 12 NM Mining </a>
-                            </h2>
-                            <p>
-                                Integer luctus diam ac scerisque consectetur. Vimus euismod nec lacus sit amet.
-                                Aenean interdus mida vitami bland. Quisque dignissim com doc blandit. Praesent
-                                urna nisi, aliquam malesuada et, lacinia in nibh. Curabit vel tellus tristique,
-                                vestibulum lectus sed, pharetra orci. Proin dictum nibh velit, eu semper libero
-                                varius at...
-                            </p>
-                        </div>
-                        <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> 12 Feb 2018
-                            </li>
-                            <li class="post-view">
-                                <i class="fa fa-eye"></i> 55
-                            </li>
-                            <li class="post-comment">
-                                <i class="fa fa-comment"></i> 12
-                            </li>
-                        </ul>
-                    </article>
+                    {% endfor %}
                     <div class="blog-pagination left">
                         <ul class="flat-pagination">
                             <li><a href="#" title="" class="active">1</a></li>
