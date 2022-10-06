@@ -28,7 +28,7 @@
                 <article class="main-post main-single">
                     <div class="featured-post">
                         <a href="#" title="">
-                            <img src="{% static 'images/blog/blog-single.jpg' %}" alt="" />
+                            <img src="{{post.image.url}}" alt="" />
                         </a>
                     </div>
                     <div class="entry-title">
@@ -36,11 +36,18 @@
                             {{post.title}}
                         </h2>
                         <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> {{post.published_date}}
+                            <li class="post-tags">
+                                <i class="fa fa-star"></i>
+                                {% for cat in post.category.all %}
+                                    <a href="#">{{cat.name}}</a>{% if not forloop.last %}, {% endif %}
+                                {% endfor %}
                             </li>
                             <li class="post-author">
-                                <i class="fa fa-user"></i> {{post.author}}
+                                <i class="fa fa-user"></i>
+                                <a href="#">{{post.author}}</a>
+                            </li>
+                            <li class="post-date">
+                                <i class="fa fa-calendar"></i> {{post.published_date|date:"d M Y"}}
                             </li>
                             <li class="post-view">
                                 <i class="fa fa-eye"></i> {{post.counted_views}}

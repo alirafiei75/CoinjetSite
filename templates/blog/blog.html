@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block blog %}class="active"{% endblock blog %}
 {% load static %}
+{% load blog_tags %}
 
 {% block content %}
 <div class="page-title">
@@ -35,126 +36,9 @@
                             </div>
                         </form>
                     </aside>
-                    <aside class="widget widget-recent-news">
-                        <h2 class=widget-title>Recent post</h2>
-                        <ul class="recent-news">
-                            <li>
-                                <div class="post-image">
-                                    <a href="#" title=""><img src="{% static 'images/blog/recent-post/post-01.jpg' %}"
-                                            alt=""></a>
-                                </div>
-                                <div class="post-content">
-                                    <h5>
-                                        <a href="blog-single.html" title="">Sberbank to Bypass Russian
-                                            Regulations</a>
-                                    </h5>
-                                    <ul class="meta-left">
-                                        <li class="post-date">
-                                            <i class="fa fa-calendar"></i> 12 Feb 2018
-                                        </li>
-                                        <li class="post-view">
-                                            <i class="fa fa-eye"></i> 22
-                                        </li>
-                                        <li class="post-comment">
-                                            <i class="fa fa-comment"></i> 7
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post-image">
-                                    <a href="#" title=""><img src="{% static 'images/blog/recent-post/post-02.jpg' %}"
-                                            alt=""></a>
-                                </div>
-                                <div class="post-content">
-                                    <h5>
-                                        <a href="blog-single.html" title="">Missed the Altcoin? The Satoshi Is
-                                            Still Very Cheap</a>
-                                    </h5>
-                                    <ul class="meta-left">
-                                        <li class="post-date">
-                                            <i class="fa fa-calendar"></i> 12 Feb 2018
-                                        </li>
-                                        <li class="post-view">
-                                            <i class="fa fa-eye"></i> 19
-                                        </li>
-                                        <li class="post-comment">
-                                            <i class="fa fa-comment"></i> 10
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post-image">
-                                    <a href="#" title=""><img src="{% static 'images/blog/recent-post/post-03.jpg' %}"
-                                            alt=""></a>
-                                </div>
-                                <div class="post-content">
-                                    <h5>
-                                        <a href="blog-single.html" title="">The Cryptocurrency Are Having an
-                                            Interesting Week</a>
-                                    </h5>
-                                    <ul class="meta-left">
-                                        <li class="post-date">
-                                            <i class="fa fa-calendar"></i> 12 Feb 2018
-                                        </li>
-                                        <li class="post-view">
-                                            <i class="fa fa-eye"></i> 28
-                                        </li>
-                                        <li class="post-comment">
-                                            <i class="fa fa-comment"></i> 18
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post-image">
-                                    <a href="#" title=""><img src="{% static 'images/blog/recent-post/post-04.jpg' %}"
-                                            alt=""></a>
-                                </div>
-                                <div class="post-content">
-                                    <h5>
-                                        <a href="blog-single.html" title=""> Most Toughest Bitcoin Puzzle Is as
-                                            Clever</a>
-                                    </h5>
-                                    <ul class="meta-left">
-                                        <li class="post-date">
-                                            <i class="fa fa-calendar"></i> 12 Feb 2018
-                                        </li>
-                                        <li class="post-view">
-                                            <i class="fa fa-eye"></i> 11
-                                        </li>
-                                        <li class="post-comment">
-                                            <i class="fa fa-comment"></i> 5
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post-image">
-                                    <a href="#" title=""><img src="{% static 'images/blog/recent-post/post-05.jpg' %}"
-                                            alt=""></a>
-                                </div>
-                                <div class="post-content">
-                                    <h5>
-                                        <a href="blog-single.html" title="">Cryptocurrencies Are Pushing
-                                            Innovation and Profits</a>
-                                    </h5>
-                                    <ul class="meta-left">
-                                        <li class="post-date">
-                                            <i class="fa fa-calendar"></i> 12 Feb 2018
-                                        </li>
-                                        <li class="post-view">
-                                            <i class="fa fa-eye"></i> 14
-                                        </li>
-                                        <li class="post-comment">
-                                            <i class="fa fa-comment"></i> 9
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </aside>
+
+                    {% popularposts %}
+
                     <aside class="widget widget_tag_cloud">
                         <h2 class="widget-title">Tags</h2>
                         <div class="tag-cloud">
@@ -193,7 +77,7 @@
                     <article class="main-post">
                         <div class="featured-post">
                             <a href="{% url 'blog:single' pid=post.id %}" title="">
-                                <img src="{% static 'images/blog/post-01.jpg' %}" alt="" />
+                                <img src="{{post.image.url}}" alt="" />
                             </a>
                         </div>
                         <div class="entry-content">
@@ -201,16 +85,26 @@
                                 <a href="{% url 'blog:single' pid=post.id %}" title="">{{post.title}}</a>
                             </h2>
                             <p>
-                                {{post.content}}
+                                {{post.content|truncatewords:15}}
                             </p>
-                            <a href="#" class="read-more" title="">READ MORE</a>
+                            <br>
+                            <p align="right">
+                                <a href="{% url 'blog:single' pid=post.id %}" class="read-more" title="">READ MORE</a>
+                            </p>
                         </div>
                         <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> {{post.published_date}}
+                            <li class="post-tags">
+                                <i class="fa fa-star"></i>
+                                {% for cat in post.category.all %}
+                                    <a href="#">{{cat.name}}</a>{% if not forloop.last %}, {% endif %}
+                                {% endfor %}
                             </li>
                             <li class="post-author">
-                                <i class="fa fa-user"></i> {{post.author}}
+                                <i class="fa fa-user"></i>
+                                <a href="#">{{post.author}}</a>
+                            </li>
+                            <li class="post-date">
+                                <i class="fa fa-calendar"></i> {{post.published_date|date:"d M Y"}}
                             </li>
                             <li class="post-view">
                                 <i class="fa fa-eye"></i> {{post.counted_views}}

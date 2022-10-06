@@ -1,0 +1,32 @@
+{% load static %}
+{% load humanize %}
+
+<aside class="widget widget-recent-news">
+    <h2 class=widget-title>Popular post</h2>
+    <ul class="recent-news">
+        {% for post in posts %}
+        <li>
+            <div class="post-image" style="max-width:130px;">
+                <a href="{% url 'blog:single' pid=post.id %}" title=""><img src="{{post.image.url}}"
+                        alt=""></a>
+            </div>
+            <div class="post-content">
+                <h5>
+                    <a href="{% url 'blog:single' pid=post.id %}" title="">{{post.title}}</a>
+                </h5>
+                <ul class="meta-left">
+                    <li class="post-author">
+                        <i class="fa fa-user"></i> {{post.author}}
+                    </li>
+                    <li class="post-view">
+                        <i class="fa fa-eye"></i> {{post.counted_views}}
+                    </li>
+                    <li class="post-date">
+                        <i class="fa fa-calendar"></i> {{post.published_date|naturalday}}
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>

@@ -186,7 +186,7 @@ body {
 a {		
 	text-decoration: none;
 	color: #979797;
-	font-family: 'Montserrat';
+	font: 16px/22px "Montserrat", sans-serif;
 	-webkit-transition: all 0.3s ease-in-out;
 	   -moz-transition: all 0.3s ease-in-out;
 		-ms-transition: all 0.3s ease-in-out;
@@ -1483,7 +1483,7 @@ article.main-post.three-column .meta-left {
 
 .widget-recent-news ul.recent-news li .post-image {
 	float: left;
-	margin-right: 30px;
+	margin-right: 10px;
 }
 
 .widget-recent-news ul.recent-news li .post-content {
