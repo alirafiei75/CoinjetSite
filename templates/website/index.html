@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block home %}class="active"{% endblock home %}
 {% load static %}
+{% load website_tags %}
 
 {% block content %}
 
@@ -554,106 +555,6 @@
         </div>
     </div>
 </section>
-<section class="flat-news">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="top-title center">
-                    <h2>NEWS & EVENTS</h2>
-                    <p>We are the world's premier 24/7 news feed covering everything bitcoin-related.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <article class="main-post news three-column">
-                    <div class="featured-post">
-                        <a href="#" title="">
-                            <img src="{% static 'images/blog/post-3-column-01.jpg' %}" alt="" />
-                        </a>
-                    </div>
-                    <div class="entry-content">
-                        <h2>
-                            <a href="#" title="">ICOs Raise Over $1 Billion in a Month for the First Time</a>
-                        </h2>
-                        <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> 12 Feb 2018
-                            </li>
-                            <li class="post-view">
-                                <i class="fa fa-eye"></i> 55
-                            </li>
-                            <li class="post-comment">
-                                <i class="fa fa-comment"></i> 12
-                            </li>
-                        </ul>
-                        <p>
-                            Integer luctus diam ac scerisque consectetur. Vimus euismod nec lacus sit amet.
-                            Aenean interdus mid vitae blandit. Quisque dignissim commodo...
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="main-post news three-column">
-                    <div class="featured-post">
-                        <a href="#" title="">
-                            <img src="{% static 'images/blog/post-3-column-10.jpg' %}" alt="" />
-                        </a>
-                    </div>
-                    <div class="entry-content">
-                        <h2>
-                            <a href="#" title="">Stripe is Withdrawing Support for Bitcoin Payments</a>
-                        </h2>
-                        <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> 12 Feb 2018
-                            </li>
-                            <li class="post-view">
-                                <i class="fa fa-eye"></i> 71
-                            </li>
-                            <li class="post-comment">
-                                <i class="fa fa-comment"></i> 14
-                            </li>
-                        </ul>
-                        <p>
-                            Integer luctus diam ac scerisque consectetur. Vimus euismod nec lacus sit amet.
-                            Aenean interdus mida vitae blandit. Quisque dignissim com doc blandit..
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="main-post news three-column">
-                    <div class="featured-post">
-                        <a href="#" title="">
-                            <img src="{% static 'images/blog/post-3-column-03.jpg' %}" alt="" />
-                        </a>
-                    </div>
-                    <div class="entry-content">
-                        <h2>
-                            <a href="#" title="">Japan's GMO Internet Develops 12 NM Mining Chips</a>
-                        </h2>
-                        <ul class="meta-left">
-                            <li class="post-date">
-                                <i class="fa fa-calendar"></i> 12 Feb 2018
-                            </li>
-                            <li class="post-view">
-                                <i class="fa fa-eye"></i> 35
-                            </li>
-                            <li class="post-comment">
-                                <i class="fa fa-comment"></i> 10
-                            </li>
-                        </ul>
-                        <p>
-                            Integer luctus diam ac scerisque consectetur. Vimus euismod nec lacus sit amet.
-                            Aenean interdus mida vitae blandit. Quisque dignissim com doc blandit..
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
+{% latestposts %}
 
 {% endblock %}
