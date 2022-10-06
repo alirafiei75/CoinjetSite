@@ -29,9 +29,9 @@
                 <div class="sidebar">
                     <aside class="widget widget_search">
                         <h2 class=widget-title>Search Here</h2>
-                        <form action="#" method="get" accept-charset="utf-8">
+                        <form action="{% url 'blog:search' %}" method="get" accept-charset="utf-8">
                             <div class="input-search">
-                                <input type="text" name="search" />
+                                <input type="text" name="s" />
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </div>
                         </form>

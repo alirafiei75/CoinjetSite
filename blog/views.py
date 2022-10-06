@@ -32,4 +32,10 @@ def single_view(request, pid):
     except:
         return redirect('/error')
 
+def search_view(request):
+    posts = Post.objects.filter(status=True)
+    if request.method == 'GET':
+        posts = posts.filter(content__contains=request.GET.get('s'))
 
+    context = {'posts':posts}
+    return render(request, 'blog/blog.html', context)

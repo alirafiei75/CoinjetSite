@@ -532,7 +532,7 @@ ul.box-account li:before {
 
 /* Box Account */
 .box-account {
-	float: right;
+	float: left;
 }
 
 ul.box-account li {
