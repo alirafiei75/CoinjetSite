@@ -1,0 +1,17 @@
+<aside class="widget widget_categories">
+    <h2 class=widget-title>Categories</h2>
+    <ul>
+        {% for name,count in categories.items %}
+        <li class="cat-item">
+            <a href="{% url 'blog:category' cat_name=name %}" title="">
+                <p style="text-align:left;">
+                    {{name}}
+                    <span style="float:right;">
+                        {{count}}
+                    </span>
+                </p>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>
