@@ -101,9 +101,19 @@
                     {% endfor %}
                     <div class="blog-pagination left">
                         <ul class="flat-pagination">
-                            <li><a href="#" title="" class="active">1</a></li>
-                            <li><a href="#" title="">2</a></li>
-                            <li><a href="#" title=""><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            {% if posts.has_previous %}
+                            <li><a href="?page={{posts.previous_page_number}}" title=""><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                            {% endif %}
+                            {% for i in posts.paginator.page_range %}
+                                {% if posts.number == i %}
+                                    <li><a href="?page={{i}}" title="" class="active">{{i}}</a></li>
+                                {% else %}
+                                    <li><a href="?page={{i}}" title="">{{i}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if posts.has_next %}
+                            <li><a href="?page={{posts.next_page_number}}" title=""><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            {% endif %}
                             </li>
                         </ul>
                     </div>
