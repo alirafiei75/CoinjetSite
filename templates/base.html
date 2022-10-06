@@ -90,16 +90,16 @@
                             </div>
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu">
-                                    <li class="active">
+                                    <li {% block home %}{% endblock home %}>
                                         <a href="{% url 'website:index' %}" title="">HOME</a>
                                     </li>
-                                    <li>
+                                    <li {% block about %}{% endblock about %}>
                                         <a href="{% url 'website:about' %}" title="">ABOUT</a>
                                     </li>
-                                    <li>
+                                    <li {% block blog %}{% endblock blog %}>
                                         <a href="{% url 'blog:blog' %}" title="">BLOG</a>
                                     </li>
-                                    <li>
+                                    <li {% block contact %}{% endblock contact %}>
                                         <a href="{% url 'website:contact' %}" title="">CONTACT</a>
                                     </li>
                                 </ul>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block contact %}class="active"{% endblock contact %}
 {% load static %}
 
 {% block content %}
@@ -11,7 +12,7 @@
                         <h1 class="h1-title">CONTACT US</h1>
                     </div>
                     <ul class="breadcrumbs">
-                        <li><a href="#" title="">Home</a></li>
+                        <li><a href="{% url 'website:index' %}" title="">Home</a></li>
                         <li class="dot">/</li>
                         <li>Contact us</li>
                     </ul>
@@ -57,27 +58,11 @@
                         </div>
                     </div>
                     <div class="box-content">
-                        <h2>Email:</h2>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                data-cfemail="761f1810191213130415041317021f001336111b171f1a5815191b">[email&#160;protected]</a>
+                        <h2>Email</h2>
+                        <p><a href="">example@gmail.com</a>
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="flat-map">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <section class="pdmap" id="flat-map">
-                    <div class="flat-maps" data-address="383 Fourth Street, Old Town, ME 04468, Hoa Kỳ"
-                        data-height="500" data-image="images/icon/map.png" data-name="Themesflat Map"></div>
-                    <div class="gm-map">
-                        <div class="map box-shadow"></div>
-                    </div>
-                </section>
             </div>
         </div>
     </div>
@@ -91,22 +76,34 @@
                     <p>We'll help you resolve your issues quickly and easily.</p>
                 </div>
                 <div class="form-contact-form">
-                    <form id="contactform" action="./contact/contact-process.php" method="post" accept-charset="utf-8">
-                        <div id="subscribe-content-1">
-                            <div class="field-row">
-                                <div class="contact-form-name contact-form">
-                                    <input type="text" name="name" id="name" placeholder="Your Name" required="" />
-                                </div>
-                                <div class="contact-form-email contact-form">
-                                    <input type="text" name="email" id="email" placeholder="Your Email" required="" />
-                                </div>
+                    <form class="form-area contact-form text-right" action="{% url 'website:contact' %}" method="post">
+                        <div class="row">
+                            {% csrf_token %}
+                            <div class="col-lg-6 form-group">
+                                <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control"
+                                    required="" type="text">
+    
+                                <input name="email" placeholder="Enter email address"
+                                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+                                    class="common-input mb-20 form-control" required="" type="email">
+    
+                                <input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control"
+                                    type="text">
                             </div>
-                            <div class="contact-form-comment contact-form">
-                                <textarea name="message" id="message" placeholder="Your Message" required=""></textarea>
+                            <div class="col-lg-6 form-group">
+                                <textarea class="common-textarea form-control" name="message" placeholder="Enter Messege"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'"
+                                    required=""></textarea>
                             </div>
-                            <div class="btn-contact-form center">
-                                <button type="submit" class="flat-button-form border-radius-2">SEND
-                                    MESSAGE</button>
+                            <div class="col-lg-12">
+                                <div class="pb-3">
+                                    {{form.captcha}}
+                                </div>
+                            <div class="alert-msg" style="text-align: left;"></div>
+                            <button class="genric-btn primary" style="float: right;">Send Message</button>
                             </div>
                         </div>
                     </form>
