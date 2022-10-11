@@ -117,17 +117,16 @@
                             <div class="col-md-4">
                                 <div class="widget widget-newletter">
                                     <h3 class="widget-title">NEWSLETTER</h3>
-                                    <form id="subscribe-form" action="#" method="post" accept-charset="utf-8"
-                                        data-mailchimp="true">
+                                    <form action="{% url 'website:newsletter' %}" method="post" accept-charset="utf-8">
+                                        {% csrf_token %}
                                         <div id="subscribe-content">
                                             <div class="input-email">
-                                                <input type="email" name="email-form" id="subscribe-email"
-                                                    placeholder="Email address" />
+                                                <input type="email" name="email" id="subscribe-email"
+                                                    placeholder="Email address">
                                             </div>
-                                            <button type="button" id="subscribe-button" class="button-subscribe"><i
+                                            <button type="submit" id="subscribe-button" class="button-subscribe"><i
                                                     class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                         </div>
-                                        <div id="subscribe-msg"></div>
                                     </form>
                                 </div>
                             </div>
