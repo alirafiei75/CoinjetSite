@@ -50,14 +50,13 @@
                     platform in the world, we are using new technology to build a radically better financial
                     system. Our technology is revolutionizing the financial services industry
                 </div>
-                <a href="#" target="_self" class="tp-caption flat-button-slider bg-blue"
+                <a href="{% url 'website:about' %}" target="_self" class="tp-caption flat-button-slider bg-blue"
                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                     data-x="['center','center','center','center']" data-hoffset="['-100','-100','-100','-100']"
                     data-y="['middle','middle','middle','middle']" data-voffset="['131','180','160','130']"
-                    data-fontsize="['14','14','14','14']" data-width="['auto']" data-height="['auto']">GET
-                    STARTED
+                    data-fontsize="['14','14','14','14']" data-width="['auto']" data-height="['auto']">ABOUT US
                 </a>
-                <a href="#" target="_self" class="tp-caption flat-button-slider bg-white"
+                <a href="{% url 'website:contact' %}" target="_self" class="tp-caption flat-button-slider bg-white"
                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                     data-x="['center','center','center','center']" data-hoffset="['100','100','100','100']"
                     data-y="['middle','middle','middle','middle']" data-voffset="['131','180','160','130']"
@@ -175,7 +174,7 @@
                             </div>
                         </div>
                         <div class="iconbox-content">
-                            <h4><a href="#" title="">CREAT ACCOUNT</a></h4>
+                            <h4><a href="#" title="">CREATE ACCOUNT</a></h4>
                             <p>In Aenean lacus purus, pretium sit met sapien. Nam enetume faucibus, morbi
                                 tempor, desu et dapibus volutpat.</p>
                         </div>
@@ -228,7 +227,7 @@
                 <p>Proin at metus congue, semper nunc sed, sollicitudin dui. Nunc utcon dimentum mi. In pharetra
                     ipsum leo, velas porttitor elit posuere eu. Pellentesque aliquam, neque at maximus rhoncus,
                     ante tortor.</p>
-                <a href="#" class="read-more" title="">GET STARTED</a>
+                <a href="{% url 'website:about' %}" class="read-more" title="">READ MORE</a>
             </div>
         </div>
     </div>
@@ -238,7 +237,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="wrap-recent-text style4">
-                    <h2 class="title">WHY CHOOSE US</h2>
+                    <h2 class="title">OUR BLOG</h2>
                     <div class="content-text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat pretium
                             tincidunt. Donec ultricies pulvinar velit, eget euismod sapien. Duis pharetra sed
@@ -246,7 +245,7 @@
                         <p>Proin at metus congue, semper nunc sed, sollicitudin dui. Nunc utcon dimentum mi. In
                             pharetra ipsum leo, velas porttitor elit posuere eu. Pellentesque aliquam, neque at
                             maximus rhoncus, ante tortor.</p>
-                        <a href="#" class="read-more" title="">READ MORE</a>
+                        <a href="{% url 'blog:blog' %}" class="read-more" title="">READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -327,69 +326,9 @@
         </div>
     </div>
 </section>
-<section class="flat-price-coin">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="top-title center">
-                    <h2>CRYPTOCURRENCY PRICES</h2>
-                    <p>The Bitcoin ecosystem at a glance. Any of our service with free test credits or actual
-                        Bitcoins.</p>
-                </div>
-                <div class="table-price">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Symbol</th>
-                                <th>Name</th>
-                                <th>USD</th>
-                                <th>Change 24h</th>
-                                <th>Change 7d</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>BTC</td>
-                                <td>Bitcoin</td>
-                                <td>11,703</td>
-                                <td class="color-green">8.63 %</td>
-                                <td class="color-green">2.9 %</td>
-                            </tr>
-                            <tr>
-                                <td>ETH</td>
-                                <td>Ethereum</td>
-                                <td>1,109</td>
-                                <td class="color-green">12.51 %</td>
-                                <td class="color-green">8.18 %</td>
-                            </tr>
-                            <tr>
-                                <td>XRP</td>
-                                <td>Ripple</td>
-                                <td>1.375</td>
-                                <td class="color-red">-2.14 %</td>
-                                <td class="color-red">-0.79 %</td>
-                            </tr>
-                            <tr>
-                                <td>LTC</td>
-                                <td>Litecoin</td>
-                                <td>185.8</td>
-                                <td class="color-green">4.89 %</td>
-                                <td class="color-red">-1.31 %</td>
-                            </tr>
-                            <tr>
-                                <td>XMR</td>
-                                <td>Monero</td>
-                                <td>328.8</td>
-                                <td class="color-red">-5.98 %</td>
-                                <td class="color-green">1.15 %</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+{% cryptoinfo %}
+
 <section class="flat-team">
     <div class="container">
         <div class="row">
@@ -522,33 +461,6 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="flat-call-back">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrap-call-back style1">
-                    <div class="title">
-                        <h2>SUBSCRIBE TO OUR UPDATE</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan tristique
-                            lorem, nec vehicula sem aliquam ut. in ante tempus.</p>
-                    </div>
-                    <div class="form-callback">
-                        <form id="subscribe-form-1" action="#" method="post" accept-charset="utf-8"
-                            data-mailchimp="true">
-                            <div id="subscribe-content-1">
-                                <input type="email" name="email-form" id="subscribe-email-1"
-                                    placeholder="Your Email Address">
-                                <button type="button" id="subscribe-button-1"
-                                    class="button-subscribe">Subscribe</button>
-                            </div>
-                            <div id="subscribe-msg-1"></div>
-                        </form>
                     </div>
                 </div>
             </div>

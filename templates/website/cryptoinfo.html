@@ -1,0 +1,123 @@
+<section class="flat-price-coin">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-title center">
+                    <h2>CRYPTOCURRENCY PRICES</h2>
+                    <p>The Bitcoin ecosystem at a glance. Any of our service with free test credits or actual
+                        Bitcoins.</p>
+                </div>
+                <div class="table-price">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Name</th>
+                                <th>USD</th>
+                                <th>Change 24h</th>
+                                <th>Change 7d</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BTC</td>
+                                <td>Bitcoin</td>
+                                <td>{{b_price}}</td>
+                                {% if b_day > 0 %}
+                                    <td class="color-green">{{b_day}} %</td>
+                                {% elif b_day < 0 %}
+                                    <td class="color-red">{{b_day}} %</td>
+                                {% else %}
+                                    <td>{{b_day}} %</td>
+                                {% endif %}
+                                {% if b_week > 0 %}
+                                    <td class="color-green">{{b_week}} %</td>
+                                {% elif b_week < 0 %}
+                                    <td class="color-red">{{b_week}} %</td>
+                                {% else %}
+                                    <td>{{b_week}} %</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>ETH</td>
+                                <td>Ethereum</td>
+                                <td>{{e_price}}</td>
+                                {% if e_day > 0 %}
+                                    <td class="color-green">{{e_day}} %</td>
+                                {% elif e_day < 0 %}
+                                    <td class="color-red">{{e_day}} %</td>
+                                {% else %}
+                                    <td>{{e_day}} %</td>
+                                {% endif %}
+                                {% if e_week > 0 %}
+                                    <td class="color-green">{{e_week}} %</td>
+                                {% elif e_week < 0 %}
+                                    <td class="color-red">{{e_week}} %</td>
+                                {% else %}
+                                    <td>{{e_week}} %</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>XRP</td>
+                                <td>Ripple</td>
+                                <td>{{r_price}}</td>
+                                {% if r_day > 0 %}
+                                    <td class="color-green">{{r_day}} %</td>
+                                {% elif r_day < 0 %}
+                                    <td class="color-red">{{r_day}} %</td>
+                                {% else %}
+                                    <td>{{r_day}} %</td>
+                                {% endif %}
+                                {% if r_week > 0 %}
+                                    <td class="color-green">{{r_week}} %</td>
+                                {% elif r_week < 0 %}
+                                    <td class="color-red">{{r_week}} %</td>
+                                {% else %}
+                                    <td>{{r_week}} %</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>LTC</td>
+                                <td>Litecoin</td>
+                                <td>{{l_price}}</td>
+                                {% if l_day > 0 %}
+                                    <td class="color-green">{{l_day}} %</td>
+                                {% elif l_day < 0 %}
+                                    <td class="color-red">{{l_day}} %</td>
+                                {% else %}
+                                    <td>{{l_day}} %</td>
+                                {% endif %}
+                                {% if l_week > 0 %}
+                                    <td class="color-green">{{l_week}} %</td>
+                                {% elif l_week < 0 %}
+                                    <td class="color-red">{{l_week}} %</td>
+                                {% else %}
+                                    <td>{{l_week}} %</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>XMR</td>
+                                <td>Monero</td>
+                                <td>{{m_price}}</td>
+                                {% if m_day > 0 %}
+                                    <td class="color-green">{{m_day}} %</td>
+                                {% elif m_day < 0 %}
+                                    <td class="color-red">{{m_day}} %</td>
+                                {% else %}
+                                    <td>{{m_day}} %</td>
+                                {% endif %}
+                                {% if m_week > 0 %}
+                                    <td class="color-green">{{m_week}} %</td>
+                                {% elif m_week < 0 %}
+                                    <td class="color-red">{{m_week}} %</td>
+                                {% else %}
+                                    <td>{{m_week}} %</td>
+                                {% endif %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
