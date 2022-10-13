@@ -291,6 +291,7 @@ input[type="email"] {
 	        transition: all 0.3s ease-in-out;
 }
 
+
 input[type="search"] {
     width: 250px;  
     margin-bottom: 0px;
@@ -857,6 +858,12 @@ ul.box-account li.sign-in:before {
 #mainnav-mobi ul.sub-menu > li > a:hover,
 #mainnav-mobi > ul > li > ul > li.active > a {
 	color: #fff;
+}
+
+#id_captcha_1 {
+    max-width: 200px;
+    margin-top: 8px;
+	margin-left: 970px;
 }
 
 .btn-menu {
