@@ -1,0 +1,8 @@
+<aside class="widget widget_tag_cloud">
+    <h2 class="widget-title">Tags</h2>
+    <div class="tag-cloud">
+        {% for tag in tags %}
+            <a href="{% url 'blog:tag' tag_name=tag %}" title="" class="tag-link">{{tag}}</a>
+        {% endfor %}
+    </div>
+</aside>

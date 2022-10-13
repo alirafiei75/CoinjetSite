@@ -16,3 +16,12 @@ def postcategories():
     for name in categories:
         cat[name] = posts.filter(category=name).count()
     return {'categories':cat}
+
+@register.inclusion_tag('blog/posttags.html')
+def posttags():
+    posts = Post.objects.filter(status=True)
+    tags = set()
+    for post in posts:
+        for tag in post.tags.all():
+            tags.add(tag.name)
+    return {'tags':tags}

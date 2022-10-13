@@ -14,6 +14,9 @@ def blog_view(request, **kwargs):
     # category division
     if kwargs.get('cat_name') !=None:
         posts = posts.filter(category__name=kwargs['cat_name'])
+    # tag division
+    if kwargs.get('tag_name') !=None:
+        posts = posts.filter(tags__name__in=[kwargs['tag_name']])
     # author division
     if kwargs.get('author_username') !=None:
         posts = posts.filter(author__username=kwargs['author_username'])

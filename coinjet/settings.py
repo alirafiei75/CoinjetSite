@@ -42,9 +42,18 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django_extensions',
+    'robots',
+    'debug_toolbar',
+    'taggit',
 ]
 
+# Sites framework
 SITE_ID = 2
+
+# robots
+ROBOTS_USE_HOST = True
+ROBOTS_USE_SITEMAP = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'coinjet.urls'
@@ -137,3 +147,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
