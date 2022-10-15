@@ -1,7 +1,9 @@
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
-from blog.models import Post
+from blog.models import Post, Comment
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from blog.forms import CommentForm
+from django.contrib import messages
 
 def blog_view(request, **kwargs):
     # determining which post to show based on publish date
@@ -36,12 +38,24 @@ def blog_view(request, **kwargs):
 
 def single_view(request, pid):
     try:
+        if request.method == 'POST':
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.add_message(request, messages.SUCCESS, 'Your comment submitted successfully')
+            else:
+                messages.add_message(request, messages.ERROR, "Your comment didn't submitted")
+
         post = Post.objects.get(id=pid, status=True)
         # counted view adding method
         post.counted_views += 1
         post.save()
+        
+        #comments
+        comments = Comment.objects.filter(post=post.id, approved=True)
 
-        context = {'post':post}
+        form = CommentForm()
+        context = {'post':post, 'comments':comments, 'form':form}
         return render(request, 'blog/blog-single.html', context)    
     except:
         return redirect('/error')
