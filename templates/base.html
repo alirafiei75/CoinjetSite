@@ -44,12 +44,21 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="box-account">
+                            {% if request.user.is_authenticated %}
                             <li class="login">
-                                <a href="#" title="">Login</a>
+                                <a href="#" title="">Logged in as {{request.user.username}}</a>
                             </li>
                             <li class="sign-in">
-                                <a href="#" title="">Signup</a>
+                                <a href="{% url 'accounts:logout' %}" title="">Logout</a>
                             </li>
+                            {% else %}
+                            <li class="login">
+                                <a href="{% url 'accounts:login' %}" title="">Login</a>
+                            </li>
+                            <li class="sign-in">
+                                <a href="{% url 'accounts:signup' %}" title="">Signup</a>
+                            </li>
+                            {% endif %}
                         </ul>
                         <div class="clearfix"></div>
                     </div>
