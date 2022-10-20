@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-5n_2!=_9$bq00r(3j6n_h9l+e*92%&7v8#kv%^%$p23_wi(jx@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ali96rafiei.ir', 'www.ali96rafiei.ir']
 
 #INSTALLED_APPS = []
 
@@ -30,4 +30,4 @@ STATICFILES_DIRS = [
     BASE_DIR / 'statics',
 ]
 
-#CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
