@@ -30,4 +30,3 @@ STATICFILES_DIRS = [
     BASE_DIR / 'statics',
 ]
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
