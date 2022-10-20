@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 {% include 'message.html' %}
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
@@ -12,22 +13,16 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>Coinjet</title>
     <meta name="author" content="themsflat.com">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    {% compress css %}
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheet/bootstrap.min.css' %}">
-
     <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/layers.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}">
-
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheet/fancybox.css' %}">
-
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheet/style.css' %}">
-
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheet/colors/color1.css' %}" id="colors">
-
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheet/responsive.css' %}">
-
+    {% endcompress %}
     <link href="{% static 'icon/apple-touch-icon-48-precomposed.png' %}" rel="apple-touch-icon-precomposed">
     <link href="{% static 'icon/apple-touch-icon-32-precomposed.png' %}" rel="apple-touch-icon-precomposed">
     <link href="{% static 'icon/favicon.png' %}" rel="shortcut icon">
@@ -210,7 +205,7 @@
             </a>
         </div>
     </div>
-
+    {% compress js %}
     <script type="text/javascript" src="{% static 'javascript/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'javascript/tether.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'javascript/bootstrap.min.js' %}"></script>
@@ -248,6 +243,7 @@
         src="{% static 'revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
     <script type="text/javascript"
         src="{% static 'revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+    {% endcompress %}
 </body>
 
 </html>

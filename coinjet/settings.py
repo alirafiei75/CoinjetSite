@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_summernote',
     'captcha',
+    'compressor',
 ]
 
 
@@ -93,6 +94,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'website.middleware.MaintenanceModeMiddleware',
 ]
 
 ROOT_URLCONF = 'coinjet.urls'
@@ -179,3 +181,5 @@ EMAIL_HOST_USER = "a.rafiei1375@gmail.com"
 EMAIL_HOST_PASSWORD = "hdecztgyhtnreetr"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+MAINTENANCE_MODE = False
